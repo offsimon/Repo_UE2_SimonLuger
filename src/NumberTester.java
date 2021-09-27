@@ -1,6 +1,9 @@
 public class NumberTester {
 
     private String filePath;
+    private NumberTest oddTester;
+    private NumberTest primeTester;
+    private NumberTest palindromeTester;
 
     public NumberTester(String fileName) {
         filePath = fileName;
