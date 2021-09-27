@@ -1,12 +1,17 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class NumberTester {
 
-    private String filePath;
+    private String fileName;
     private NumberTest oddTester;
     private NumberTest primeTester;
     private NumberTest palindromeTester;
 
     public NumberTester(String fileName) {
-        filePath = fileName;
+        this.fileName = fileName;
     }
 
     public void setOddEvenTester(NumberTest oddTester) {
@@ -22,7 +27,20 @@ public class NumberTester {
     }
 
     public void testFile() {
-        //TODO
+
+        int numberOfTests = -1;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))){
+
+            numberOfTests = Integer.parseInt(br.readLine());
+
+            //
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
